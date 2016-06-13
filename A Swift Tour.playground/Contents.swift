@@ -699,8 +699,7 @@ enum OptionalValue<T>
 var possibleInteger: OptionalValue<Int> = .None
 possibleInteger = .Some(100)
 
-//import Foundation
-
+// The book was saying to use Sequence instead of SequenceType and GeneratorType instead of Generator.
 func anyCommonElements <T, U where T: SequenceType, U: SequenceType, T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element> (lhs: T, rhs: U) -> [T.Generator.Element]
 {
 	var commonElements = Array<T.Generator.Element>()
