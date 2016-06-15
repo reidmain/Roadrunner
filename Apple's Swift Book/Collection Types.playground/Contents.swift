@@ -4,6 +4,14 @@ Code generated while going through the 'Collection Types' chapter of Apple's Swi
 
 Array<Int>() == [Int]()
 
+// Two dimensional arrays
+var a = [[String]]()
+a.append([ "Hi" ])
+a.append([ "Reid" ])
+a[0]
+a[0][0] = "Bye"
+a
+
 var shoppingList: [String] = [ "Eggs", "Milk" ]
 shoppingList.append("Flour")
 //shoppingList += "Baking Powder" // Looks like this was removed in Swift 2. Seems to have been a general move to clear up ambiguous uses of the + operator.
