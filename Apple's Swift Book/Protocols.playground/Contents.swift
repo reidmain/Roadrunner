@@ -21,6 +21,18 @@ class LinearCongruentialGenerator: RandomNumberGenerator
 	}
 }
 
+import Foundation
+
+class ArcRandomNumberGenerator : RandomNumberGenerator
+{
+	func random() -> Double
+	{
+		let roll = arc4random_uniform(100)
+		
+		return Double(roll) / 100
+	}
+}
+
 class Dice
 {
 	let sides: Int
@@ -54,7 +66,7 @@ protocol DiceGameDelegate
 class SnakesAndLadders : DiceGame
 {
 	let finalSquare = 25
-	let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
+	let dice = Dice(sides: 6, generator: ArcRandomNumberGenerator())
 	var square = 0
 	var board: [Int]
 	
