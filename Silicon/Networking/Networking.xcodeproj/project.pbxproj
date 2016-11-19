@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		277CA0E41D173CB3004FE44B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 277CA0E31D173CB3004FE44B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		277CA0EB1D173CB3004FE44B /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277CA0E01D173CB3004FE44B /* Networking.framework */; };
-		277CA0F01D173CB3004FE44B /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CA0EF1D173CB3004FE44B /* NetworkingTests.swift */; };
+		277CA0F01D173CB3004FE44B /* RequestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CA0EF1D173CB3004FE44B /* RequestClientTests.swift */; };
+		277CA0FB1D173E74004FE44B /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CA0FA1D173E74004FE44B /* RequestClient.swift */; };
+		277CA0FD1D175823004FE44B /* RequestClientTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CA0FC1D175823004FE44B /* RequestClientTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +29,10 @@
 		277CA0E31D173CB3004FE44B /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		277CA0E51D173CB3004FE44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277CA0EA1D173CB3004FE44B /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		277CA0EF1D173CB3004FE44B /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		277CA0EF1D173CB3004FE44B /* RequestClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestClientTests.swift; sourceTree = "<group>"; };
 		277CA0F11D173CB3004FE44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277CA0FA1D173E74004FE44B /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClient.swift; sourceTree = "<group>"; };
+		277CA0FC1D175823004FE44B /* RequestClientTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				277CA0E31D173CB3004FE44B /* Networking.h */,
+				277CA0FA1D173E74004FE44B /* RequestClient.swift */,
+				277CA0FC1D175823004FE44B /* RequestClientTask.swift */,
 				277CA0E51D173CB3004FE44B /* Info.plist */,
 			);
 			path = Networking;
@@ -80,7 +86,7 @@
 		277CA0EE1D173CB3004FE44B /* NetworkingTests */ = {
 			isa = PBXGroup;
 			children = (
-				277CA0EF1D173CB3004FE44B /* NetworkingTests.swift */,
+				277CA0EF1D173CB3004FE44B /* RequestClientTests.swift */,
 				277CA0F11D173CB3004FE44B /* Info.plist */,
 			);
 			path = NetworkingTests;
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277CA0FB1D173E74004FE44B /* RequestClient.swift in Sources */,
+				277CA0FD1D175823004FE44B /* RequestClientTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277CA0F01D173CB3004FE44B /* NetworkingTests.swift in Sources */,
+				277CA0F01D173CB3004FE44B /* RequestClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +318,7 @@
 		277CA0F51D173CB3004FE44B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +329,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FD.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		277CA0F61D173CB3004FE44B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -378,6 +389,7 @@
 				277CA0F61D173CB3004FE44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		277CA0F71D173CB3004FE44B /* Build configuration list for PBXNativeTarget "NetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +398,7 @@
 				277CA0F91D173CB3004FE44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
