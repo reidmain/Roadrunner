@@ -14,7 +14,7 @@ class KeychainTests: XCTestCase
 			let itemInKeychain: String = try Keychain.load(key, service: service)
 			XCTAssertNil(itemInKeychain, "No item should exist in the keychain at the start of the test.");
 		}
-		catch Keychain.Error.ResultCode(let resultCode)
+		catch Keychain.KeychainError.resultCode(let resultCode)
 		{
 			XCTAssertEqual(resultCode, errSecItemNotFound, "An item not found error should be thrown because an item should not exist in the keychain at the start of the test.")
 		}
@@ -25,10 +25,10 @@ class KeychainTests: XCTestCase
 		
 		do
 		{
-			let itemToSave = "Reid";
+			let itemToSave: NSString = "Reid";
 			try Keychain.save(itemToSave, key: key, service: service)
 			
-			let itemInKeychain: String = try Keychain.load(key, service: service)
+			let itemInKeychain: NSString = try Keychain.load(key, service: service)
 			XCTAssertEqual(itemToSave, itemInKeychain);
 			
 			try Keychain.delete(key, service: service)

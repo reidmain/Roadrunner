@@ -13,38 +13,22 @@ Keychain is not thread-safe. The save method is the only method where this is a 
 public struct Keychain
 {
 	// MARK: - Enumerations
-	
+
 	// MARK: Accessibility
-	
-	public enum Accessibility : RawRepresentable
+
+	public enum Accessibility
 	{
-		case AfterFirstUnlock
-		case WhenUnlocked
-		
-		public init?(rawValue: CFString)
-		{
-			let rawValueAsString = String(rawValue)
-			switch (rawValueAsString)
-			{
-				case String(kSecAttrAccessibleWhenUnlocked):
-					self = .AfterFirstUnlock
-				
-				case String(kSecAttrAccessibleAfterFirstUnlock):
-					self = .WhenUnlocked
-				
-				default:
-					self = .AfterFirstUnlock
-			}
-		}
-		
-		public var rawValue: CFString
+		case afterFirstUnlock
+		case whenUnlocked
+
+		var rawValue: CFString
 		{
 			switch self
 			{
-				case .AfterFirstUnlock:
+				case .afterFirstUnlock:
 					return kSecAttrAccessibleAfterFirstUnlock
-				
-				case .WhenUnlocked:
+
+				case .whenUnlocked:
 					return kSecAttrAccessibleWhenUnlocked
 			}
 		}
@@ -52,13 +36,13 @@ public struct Keychain
 	
 	// MARK: Error
 	
-	public enum Error : ErrorType
+	public enum KeychainError : Error
 	{
-		case ResultCode(resultCode: OSStatus)
-		case IncorrectType
-		case ItemNotFound
-		case NothingToDelete
-		case Internal
+		case resultCode(resultCode: OSStatus)
+		case incorrectType
+		case itemNotFound
+		case nothingToDelete
+		case `internal`
 		
 		// I need to figure out where to encapsulate this information. There needs to be a way to get this for .ResultCode errors because something they are so crytpic and hard to figure out.
 //		func message() -> String
@@ -97,45 +81,45 @@ public struct Keychain
 	- throws: .ResultCode if an error occurs while deleting from the keychain.
 		Could throw an inner error if something goes wrong while checking the existance of an item in the keychain before saving. I am thinking that I should capture this scenario and raise a unique error case.
 	*/
-	public static func save(item: NSCoding, 
-		key: String, 
+	public static func save(item: NSCoding,
+		key: String,
 		service: String, 
 		accessGroup: String? = nil, 
-		accessibility: Accessibility = .AfterFirstUnlock) 
+		accessibility: Accessibility = .afterFirstUnlock)
 			throws
 	{
 		do
 		{
-			try Keychain.loadData(key, service: service, accessGroup: accessGroup)
+			_ = try Keychain.loadData(key: key, service: service, accessGroup: accessGroup)
 			
-			let valueData = NSKeyedArchiver.archivedDataWithRootObject(item)
+			let valueData = NSKeyedArchiver.archivedData(withRootObject: item)
 			
-			let queryDictionary = self.baseQueryDictionary(key, service: service, accessGroup: accessGroup)
+			let queryDictionary = self.baseQueryDictionary(key: key, service: service, accessGroup: accessGroup)
 			
 			var attributesToUpdate = Dictionary<String, AnyObject>()
-			attributesToUpdate[kSecValueData as String] = valueData
+			attributesToUpdate[kSecValueData as String] = valueData as AnyObject
 			attributesToUpdate[kSecAttrAccessible as String] = accessibility.rawValue
 			
-			let resultCode = SecItemUpdate(queryDictionary, attributesToUpdate)
+			let resultCode = SecItemUpdate(queryDictionary as CFDictionary, attributesToUpdate as CFDictionary)
 			if resultCode != errSecSuccess
 			{
-				let error = Error.ResultCode(resultCode: resultCode)
+				let error = KeychainError.resultCode(resultCode: resultCode)
 				throw error
 			}
 		}
-		catch Error.ResultCode(resultCode: errSecItemNotFound)
+		catch KeychainError.resultCode(resultCode: errSecItemNotFound)
 		{
-			let valueData = NSKeyedArchiver.archivedDataWithRootObject(item)
+			let valueData = NSKeyedArchiver.archivedData(withRootObject: item)
 			
-			var query = self.baseQueryDictionary(key, service: service, accessGroup: accessGroup)
+			var query = self.baseQueryDictionary(key: key, service: service, accessGroup: accessGroup)
 			
-			query[kSecValueData as String] = valueData
+			query[kSecValueData as String] = valueData as AnyObject
 			query[kSecAttrAccessible as String] = accessibility.rawValue
 			
-			let resultCode = SecItemAdd(query, nil)
+			let resultCode = SecItemAdd(query as CFDictionary, nil)
 			if resultCode != errSecSuccess
 			{
-				let error = Error.ResultCode(resultCode: resultCode)
+				let error = KeychainError.resultCode(resultCode: resultCode)
 				throw error
 			}
 		}
@@ -153,21 +137,21 @@ public struct Keychain
 		Could also throw an inner error by NSKeyedArchiver which is another thing I should probably handle and encapsulate.
 		.IncorrectType if the type specified is not the same as what is returned from the keychain.
 	*/
-	public static func load<T>(key: String, 
+	public static func load<T>(key: String,
 		service: String, 
 		accessGroup: String? = nil) 
 			throws -> T
 	{
-		let data = try Keychain.loadData(key, service: service, accessGroup: accessGroup)
+		let data = try Keychain.loadData(key: key, service: service, accessGroup: accessGroup)
 		
-		let unarchivedItem = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) // TODO: Handle this throw and encapsulate it. 
+		let unarchivedItem = NSKeyedUnarchiver.unarchiveObject(with: data) // TODO: Handle this throw and encapsulate it.
 		if let castedItem = unarchivedItem as? T
 		{
 			return castedItem
 		}
 		else
 		{
-			let error = Error.IncorrectType
+			let error = KeychainError.incorrectType
 			throw error
 		}
 	}
@@ -183,26 +167,26 @@ public struct Keychain
 	- throws: .ResultCode if an error occurs while deleting from the keychain.
 		.NothingToDelete if the delete failed because there was nothing to delete.
 	*/
-	public static func delete(key: String, 
+	public static func delete(key: String,
 		service: String, 
 		accessGroup: String? = nil)
 			throws
 	{
-		let queryDictionary = self.baseQueryDictionary(key, service: service, accessGroup: accessGroup)
+		let queryDictionary = self.baseQueryDictionary(key: key, service: service, accessGroup: accessGroup)
 		
-		let resultCode = SecItemDelete(queryDictionary)
+		let resultCode = SecItemDelete(queryDictionary as CFDictionary)
 		if resultCode != errSecSuccess
 		{
 			// If the delete failed bacause the item did not exist in the keychain throw a more descriptive error.
 			if resultCode == errSecItemNotFound
 			{
 //				let error = Error(resultCode: resultCode, message: "Could not delete item with key '\(key)' for service '\(service)' from the keychain because it does not exist.")
-				let error = Error.NothingToDelete
+				let error = KeychainError.nothingToDelete
 				throw error
 			}
 			else
 			{
-				let error = Error.ResultCode(resultCode: resultCode)
+				let error = KeychainError.resultCode(resultCode: resultCode)
 				throw error
 			}
 		}
@@ -220,40 +204,40 @@ public struct Keychain
 		.Invalid if the query was successful but what was queried was not in the expected format. This is a critical error that should not be physically possible in practice.
 		.ItemNotFound if the query was successful but no data was stored. This is a critical error that should not be physically possible in practice.
 	*/
-	public static func loadData(key: String, 
+	public static func loadData(key: String,
 		service: String, 
 		accessGroup: String? = nil) 
-			throws -> NSData
+			throws -> Data
 	{
-		var queryDictionary = self.baseQueryDictionary(key, service: service, accessGroup: accessGroup)
+		var queryDictionary = self.baseQueryDictionary(key: key, service: service, accessGroup: accessGroup)
 		queryDictionary[kSecMatchLimit as String] = kSecMatchLimitOne
 		queryDictionary[kSecReturnAttributes as String] = kCFBooleanTrue
 		queryDictionary[kSecReturnData as String] = kCFBooleanTrue
 		
 		var queryResult: AnyObject? = nil
-		let resultCode = SecItemCopyMatching(queryDictionary, &queryResult)
+		let resultCode = SecItemCopyMatching(queryDictionary as CFDictionary, &queryResult)
 		if resultCode != errSecSuccess
 		{
-			let error = Error.ResultCode(resultCode: resultCode)
+			let error = KeychainError.resultCode(resultCode: resultCode)
 			throw error
 		}
 		else
 		{
 			if let itemAttributesAndData = queryResult as? Dictionary<String, AnyObject>
 			{
-				if let data = itemAttributesAndData[kSecValueData as String] as? NSData
+				if let data = itemAttributesAndData[kSecValueData as String] as? Data
 				{
 					return data
 				}
 				else
 				{
-					let error = Error.ItemNotFound
+					let error = KeychainError.itemNotFound
 					throw error
 				}
 			}
 			else
 			{
-				let error = Error.Internal
+				let error = KeychainError.internal
 				throw error
 			}
 		}
@@ -271,7 +255,7 @@ public struct Keychain
 	
 	- warning: If this is used on the Simulator the access group is completely ignored. Since apps on the simulator are not signed they have no concept of access groups and therefore any query to the keychain uses the same "default" access group.
 	*/
-	private static func baseQueryDictionary(key: String, 
+	fileprivate static func baseQueryDictionary(key: String,
 		service: String, 
 		accessGroup optionalAccessGroup: String? = nil) 
 			-> Dictionary<String, AnyObject>
@@ -279,15 +263,15 @@ public struct Keychain
 		var baseQueryDictionary = Dictionary<String, AnyObject>()
 		
 		baseQueryDictionary[kSecClass as String] = kSecClassGenericPassword
-		baseQueryDictionary[kSecAttrAccount as String] = key
-		baseQueryDictionary[kSecAttrService as String] = service
+		baseQueryDictionary[kSecAttrAccount as String] = key as AnyObject
+		baseQueryDictionary[kSecAttrService as String] = service as AnyObject
 		
 #if TARGET_IPHONE_SIMULATOR
 		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
 #else
 		if let accessGroup = optionalAccessGroup
 		{
-			baseQueryDictionary[kSecAttrAccessGroup as String] = accessGroup
+			baseQueryDictionary[kSecAttrAccessGroup as String] = accessGroup as AnyObject
 		}
 #endif
 		
