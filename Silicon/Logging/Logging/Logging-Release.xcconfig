@@ -1,0 +1,10 @@
+#include "Logging.xcconfig"
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution
+
+COPY_PHASE_STRIP = YES
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ENABLE_NS_ASSERTIONS = NO
+VALIDATE_PRODUCT = YES
+
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
