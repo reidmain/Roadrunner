@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F6A21A1ED0088A0043A0AD /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27FB48631ECD5D2300B04186 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
-		27FB48681ECD5D2300B04186 /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48671ECD5D2300B04186 /* LoggingTests.swift */; };
-		27FB486A1ECD5D2300B04186 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27FB485C1ECD5D2300B04186 /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27FB48E11ED003B900B04186 /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,15 +23,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27F6A2121ED006F00043A0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Debug.xcconfig"; sourceTree = "<group>"; };
+		27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Release.xcconfig"; sourceTree = "<group>"; };
+		27F6A2151ED006F00043A0AD /* Logging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Logging.xcconfig; sourceTree = "<group>"; };
+		27F6A2171ED006FB0043A0AD /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		27FB48591ECD5D2300B04186 /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27FB485C1ECD5D2300B04186 /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
-		27FB485D1ECD5D2300B04186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27FB48621ECD5D2300B04186 /* LoggingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoggingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27FB48671ECD5D2300B04186 /* LoggingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingTests.swift; sourceTree = "<group>"; };
-		27FB48691ECD5D2300B04186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27FB48731ECD601200B04186 /* Logging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Logging.xcconfig; sourceTree = "<group>"; };
-		27FB48741ECD67DD00B04186 /* Logging-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Debug.xcconfig"; sourceTree = "<group>"; };
-		27FB48751ECD67DD00B04186 /* Logging-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Release.xcconfig"; sourceTree = "<group>"; };
+		27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logging iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27FB48DE1ED003B500B04186 /* LoggingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingTests.swift; sourceTree = "<group>"; };
+		27FB48E01ED003B500B04186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,43 +53,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F6A2111ED006F00043A0AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27F6A2121ED006F00043A0AD /* Info.plist */,
+				27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */,
+				27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */,
+				27F6A2151ED006F00043A0AD /* Logging.xcconfig */,
+			);
+			path = "Supporting Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		27F6A2161ED006FB0043A0AD /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				27F6A2171ED006FB0043A0AD /* Logging.h */,
+			);
+			name = Logging;
+			path = ../Logging;
+			sourceTree = "<group>";
+		};
 		27FB484F1ECD5D2300B04186 = {
 			isa = PBXGroup;
 			children = (
-				27FB485B1ECD5D2300B04186 /* Logging */,
-				27FB48661ECD5D2300B04186 /* LoggingTests */,
+				27FB485B1ECD5D2300B04186 /* Logging Framework */,
+				27FB48661ECD5D2300B04186 /* Logging Tests */,
 				27FB485A1ECD5D2300B04186 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		27FB485A1ECD5D2300B04186 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				27FB48591ECD5D2300B04186 /* Logging.framework */,
-				27FB48621ECD5D2300B04186 /* LoggingTests.xctest */,
+				27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27FB485B1ECD5D2300B04186 /* Logging */ = {
+		27FB485B1ECD5D2300B04186 /* Logging Framework */ = {
 			isa = PBXGroup;
 			children = (
-				27FB485C1ECD5D2300B04186 /* Logging.h */,
-				27FB485D1ECD5D2300B04186 /* Info.plist */,
-				27FB48731ECD601200B04186 /* Logging.xcconfig */,
-				27FB48741ECD67DD00B04186 /* Logging-Debug.xcconfig */,
-				27FB48751ECD67DD00B04186 /* Logging-Release.xcconfig */,
+				27F6A2161ED006FB0043A0AD /* Logging */,
+				27F6A2111ED006F00043A0AD /* Supporting Files */,
 			);
-			path = Logging;
+			name = "Logging Framework";
 			sourceTree = "<group>";
 		};
-		27FB48661ECD5D2300B04186 /* LoggingTests */ = {
+		27FB48661ECD5D2300B04186 /* Logging Tests */ = {
 			isa = PBXGroup;
 			children = (
-				27FB48671ECD5D2300B04186 /* LoggingTests.swift */,
-				27FB48691ECD5D2300B04186 /* Info.plist */,
+				27FB48DD1ED003B500B04186 /* Classes */,
+				27FB48DF1ED003B500B04186 /* Supporting Files */,
 			);
-			path = LoggingTests;
+			path = "Logging Tests";
+			sourceTree = "<group>";
+		};
+		27FB48DD1ED003B500B04186 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27FB48DE1ED003B500B04186 /* LoggingTests.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		27FB48DF1ED003B500B04186 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27FB48E01ED003B500B04186 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,16 +133,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FB486A1ECD5D2300B04186 /* Logging.h in Headers */,
+				27F6A21A1ED0088A0043A0AD /* Logging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		27FB48581ECD5D2300B04186 /* Logging */ = {
+		27FB48581ECD5D2300B04186 /* Logging iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging" */;
+			buildConfigurationList = 27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS" */;
 			buildPhases = (
 				27FB48541ECD5D2300B04186 /* Sources */,
 				27FB48551ECD5D2300B04186 /* Frameworks */,
@@ -119,14 +153,14 @@
 			);
 			dependencies = (
 			);
-			name = Logging;
+			name = "Logging iOS";
 			productName = Logging;
 			productReference = 27FB48591ECD5D2300B04186 /* Logging.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		27FB48611ECD5D2300B04186 /* LoggingTests */ = {
+		27FB48611ECD5D2300B04186 /* Logging iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27FB48701ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "LoggingTests" */;
+			buildConfigurationList = 27FB48701ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS Tests" */;
 			buildPhases = (
 				27FB485E1ECD5D2300B04186 /* Sources */,
 				27FB485F1ECD5D2300B04186 /* Frameworks */,
@@ -137,9 +171,9 @@
 			dependencies = (
 				27FB48651ECD5D2300B04186 /* PBXTargetDependency */,
 			);
-			name = LoggingTests;
+			name = "Logging iOS Tests";
 			productName = LoggingTests;
-			productReference = 27FB48621ECD5D2300B04186 /* LoggingTests.xctest */;
+			productReference = 27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -174,8 +208,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27FB48581ECD5D2300B04186 /* Logging */,
-				27FB48611ECD5D2300B04186 /* LoggingTests */,
+				27FB48581ECD5D2300B04186 /* Logging iOS */,
+				27FB48611ECD5D2300B04186 /* Logging iOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FB48681ECD5D2300B04186 /* LoggingTests.swift in Sources */,
+				27FB48E11ED003B900B04186 /* LoggingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +252,7 @@
 /* Begin PBXTargetDependency section */
 		27FB48651ECD5D2300B04186 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 27FB48581ECD5D2300B04186 /* Logging */;
+			target = 27FB48581ECD5D2300B04186 /* Logging iOS */;
 			targetProxy = 27FB48641ECD5D2300B04186 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -226,7 +260,7 @@
 /* Begin XCBuildConfiguration section */
 		27FB486B1ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27FB48741ECD67DD00B04186 /* Logging-Debug.xcconfig */;
+			baseConfigurationReference = 27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -240,7 +274,7 @@
 		};
 		27FB486C1ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27FB48751ECD67DD00B04186 /* Logging-Release.xcconfig */;
+			baseConfigurationReference = 27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -251,16 +285,12 @@
 		27FB486E1ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Logging/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FD.Logging.Logging;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -269,16 +299,12 @@
 		27FB486F1ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Logging/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FD.Logging.Logging;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -287,22 +313,20 @@
 		27FB48711ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LoggingTests/Info.plist;
+				INFOPLIST_FILE = "Logging Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FD.Logging.LoggingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.logging.ios.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		27FB48721ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LoggingTests/Info.plist;
+				INFOPLIST_FILE = "Logging Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FD.Logging.LoggingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.logging.ios.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -318,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging" */ = {
+		27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27FB486E1ECD5D2300B04186 /* Debug */,
@@ -327,7 +351,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27FB48701ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "LoggingTests" */ = {
+		27FB48701ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27FB48711ECD5D2300B04186 /* Debug */,
