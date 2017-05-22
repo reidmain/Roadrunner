@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B957FB1ED2724E0062EF04 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27B9580B1ED27B8F0062EF04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
+		27B9580C1ED27BA90062EF04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
+		27BB1A6D1ED28A9800A8987F /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
+		27BB1A6E1ED28B5600A8987F /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
+		27BB1A6F1ED28B6100A8987F /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B957E01ED270240062EF04 /* Logging.framework */; };
 		27F6A21A1ED0088A0043A0AD /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27FB48631ECD5D2300B04186 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
 		27FB48E11ED003B900B04186 /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		27B957EA1ED270240062EF04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27FB48501ECD5D2300B04186 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27B957DF1ED270240062EF04;
+			remoteInfo = "Logging OS X";
+		};
 		27FB48641ECD5D2300B04186 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27FB48501ECD5D2300B04186 /* Project object */;
@@ -23,10 +35,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27B957E01ED270240062EF04 /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logging macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B957F81ED271240062EF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B957FC1ED272840062EF04 /* macOS Framework Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS Framework Debug.xcconfig"; sourceTree = "<group>"; };
+		27B957FD1ED2728A0062EF04 /* iOS Framework Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS Framework Debug.xcconfig"; sourceTree = "<group>"; };
+		27B957FF1ED272900062EF04 /* Project Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project Debug.xcconfig"; sourceTree = "<group>"; };
+		27B958001ED272900062EF04 /* Project Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project Release.xcconfig"; sourceTree = "<group>"; };
+		27B958011ED272900062EF04 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		27B958021ED2740B0062EF04 /* iOS Framework Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS Framework Release.xcconfig"; sourceTree = "<group>"; };
+		27B958031ED274170062EF04 /* macOS Framework Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS Framework Release.xcconfig"; sourceTree = "<group>"; };
+		27B958051ED274830062EF04 /* macOS Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS Tests.xcconfig"; sourceTree = "<group>"; };
+		27B958061ED274830062EF04 /* macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = macOS.xcconfig; sourceTree = "<group>"; };
+		27B958071ED274A50062EF04 /* iOS Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS Tests.xcconfig"; sourceTree = "<group>"; };
+		27B958091ED274A50062EF04 /* iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = iOS.xcconfig; sourceTree = "<group>"; };
+		27B9580A1ED27B8F0062EF04 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		27B9580D1ED27F970062EF04 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		27B9580E1ED280ED0062EF04 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
+		27B9580F1ED2836B0062EF04 /* iOS Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS Framework.xcconfig"; sourceTree = "<group>"; };
+		27B958111ED284480062EF04 /* macOS Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS Framework.xcconfig"; sourceTree = "<group>"; };
 		27F6A2121ED006F00043A0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Debug.xcconfig"; sourceTree = "<group>"; };
-		27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Logging-Release.xcconfig"; sourceTree = "<group>"; };
-		27F6A2151ED006F00043A0AD /* Logging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Logging.xcconfig; sourceTree = "<group>"; };
 		27F6A2171ED006FB0043A0AD /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		27FB48591ECD5D2300B04186 /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logging iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +63,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		27B957DC1ED270240062EF04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B957E51ED270240062EF04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB1A6F1ED28B6100A8987F /* Logging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FB48551ECD5D2300B04186 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,28 +89,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27FB48631ECD5D2300B04186 /* Logging.framework in Frameworks */,
+				27BB1A6E1ED28B5600A8987F /* Logging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27F6A2111ED006F00043A0AD /* Supporting Files */ = {
+		27B957F71ED271240062EF04 /* macOS Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27B957F81ED271240062EF04 /* Info.plist */,
+				27B958061ED274830062EF04 /* macOS.xcconfig */,
+				27B958111ED284480062EF04 /* macOS Framework.xcconfig */,
+				27B957FC1ED272840062EF04 /* macOS Framework Debug.xcconfig */,
+				27B958031ED274170062EF04 /* macOS Framework Release.xcconfig */,
+				27B958051ED274830062EF04 /* macOS Tests.xcconfig */,
+			);
+			path = "macOS Supporting Files";
+			sourceTree = "<group>";
+		};
+		27B957FE1ED272900062EF04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27B958011ED272900062EF04 /* Project.xcconfig */,
+				27B957FF1ED272900062EF04 /* Project Debug.xcconfig */,
+				27B958001ED272900062EF04 /* Project Release.xcconfig */,
+				27B9580D1ED27F970062EF04 /* Framework.xcconfig */,
+				27B9580E1ED280ED0062EF04 /* Tests.xcconfig */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27F6A2111ED006F00043A0AD /* iOS Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				27F6A2121ED006F00043A0AD /* Info.plist */,
-				27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */,
-				27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */,
-				27F6A2151ED006F00043A0AD /* Logging.xcconfig */,
+				27B958091ED274A50062EF04 /* iOS.xcconfig */,
+				27B9580F1ED2836B0062EF04 /* iOS Framework.xcconfig */,
+				27B957FD1ED2728A0062EF04 /* iOS Framework Debug.xcconfig */,
+				27B958021ED2740B0062EF04 /* iOS Framework Release.xcconfig */,
+				27B958071ED274A50062EF04 /* iOS Tests.xcconfig */,
 			);
-			path = "Supporting Files";
+			path = "iOS Supporting Files";
 			sourceTree = SOURCE_ROOT;
 		};
 		27F6A2161ED006FB0043A0AD /* Logging */ = {
 			isa = PBXGroup;
 			children = (
 				27F6A2171ED006FB0043A0AD /* Logging.h */,
+				27B9580A1ED27B8F0062EF04 /* Logger.swift */,
 			);
 			name = Logging;
 			path = ../Logging;
@@ -88,6 +159,8 @@
 			children = (
 				27FB48591ECD5D2300B04186 /* Logging.framework */,
 				27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */,
+				27B957E01ED270240062EF04 /* Logging.framework */,
+				27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				27F6A2161ED006FB0043A0AD /* Logging */,
-				27F6A2111ED006F00043A0AD /* Supporting Files */,
+				27B957FE1ED272900062EF04 /* Supporting Files */,
+				27F6A2111ED006F00043A0AD /* iOS Supporting Files */,
+				27B957F71ED271240062EF04 /* macOS Supporting Files */,
 			);
 			name = "Logging Framework";
 			sourceTree = "<group>";
@@ -129,6 +204,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		27B957DD1ED270240062EF04 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B957FB1ED2724E0062EF04 /* Logging.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FB48561ECD5D2300B04186 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +223,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		27B957DF1ED270240062EF04 /* Logging macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B957F11ED270240062EF04 /* Build configuration list for PBXNativeTarget "Logging macOS" */;
+			buildPhases = (
+				27B957DB1ED270240062EF04 /* Sources */,
+				27B957DC1ED270240062EF04 /* Frameworks */,
+				27B957DD1ED270240062EF04 /* Headers */,
+				27B957DE1ED270240062EF04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Logging macOS";
+			productName = "Logging OS X";
+			productReference = 27B957E01ED270240062EF04 /* Logging.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		27B957E71ED270240062EF04 /* Logging macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B957F41ED270240062EF04 /* Build configuration list for PBXNativeTarget "Logging macOS Tests" */;
+			buildPhases = (
+				27B957E41ED270240062EF04 /* Sources */,
+				27B957E51ED270240062EF04 /* Frameworks */,
+				27B957E61ED270240062EF04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B957EB1ED270240062EF04 /* PBXTargetDependency */,
+			);
+			name = "Logging macOS Tests";
+			productName = "Logging OS XTests";
+			productReference = 27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27FB48581ECD5D2300B04186 /* Logging iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS" */;
@@ -186,8 +305,17 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Reid Main";
 				TargetAttributes = {
+					27B957DF1ED270240062EF04 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					27B957E71ED270240062EF04 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					27FB48581ECD5D2300B04186 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					27FB48611ECD5D2300B04186 = {
@@ -209,12 +337,28 @@
 			projectRoot = "";
 			targets = (
 				27FB48581ECD5D2300B04186 /* Logging iOS */,
+				27B957DF1ED270240062EF04 /* Logging macOS */,
 				27FB48611ECD5D2300B04186 /* Logging iOS Tests */,
+				27B957E71ED270240062EF04 /* Logging macOS Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27B957DE1ED270240062EF04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B957E61ED270240062EF04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FB48571ECD5D2300B04186 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,10 +376,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27B957DB1ED270240062EF04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B9580C1ED27BA90062EF04 /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B957E41ED270240062EF04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB1A6D1ED28A9800A8987F /* LoggingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FB48541ECD5D2300B04186 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B9580B1ED27B8F0062EF04 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +411,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		27B957EB1ED270240062EF04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27B957DF1ED270240062EF04 /* Logging macOS */;
+			targetProxy = 27B957EA1ED270240062EF04 /* PBXContainerItemProxy */;
+		};
 		27FB48651ECD5D2300B04186 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27FB48581ECD5D2300B04186 /* Logging iOS */;
@@ -258,81 +424,97 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		27B957F21ED270240062EF04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B957FC1ED272840062EF04 /* macOS Framework Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		27B957F31ED270240062EF04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958031ED274170062EF04 /* macOS Framework Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		27B957F51ED270240062EF04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958051ED274830062EF04 /* macOS Tests.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		27B957F61ED270240062EF04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958051ED274830062EF04 /* macOS Tests.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		27FB486B1ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27F6A2131ED006F00043A0AD /* Logging-Debug.xcconfig */;
+			baseConfigurationReference = 27B957FF1ED272900062EF04 /* Project Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 		27FB486C1ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27F6A2141ED006F00043A0AD /* Logging-Release.xcconfig */;
+			baseConfigurationReference = 27B958001ED272900062EF04 /* Project Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 		27FB486E1ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B957FD1ED2728A0062EF04 /* iOS Framework Debug.xcconfig */;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		27FB486F1ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958021ED2740B0062EF04 /* iOS Framework Release.xcconfig */;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		27FB48711ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958071ED274A50062EF04 /* iOS Tests.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = "Logging Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.logging.ios.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		27FB48721ECD5D2300B04186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B958071ED274A50062EF04 /* iOS Tests.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = "Logging Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.logging.ios.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27B957F11ED270240062EF04 /* Build configuration list for PBXNativeTarget "Logging macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B957F21ED270240062EF04 /* Debug */,
+				27B957F31ED270240062EF04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B957F41ED270240062EF04 /* Build configuration list for PBXNativeTarget "Logging macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B957F51ED270240062EF04 /* Debug */,
+				27B957F61ED270240062EF04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27FB48531ECD5D2300B04186 /* Build configuration list for PBXProject "Logging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

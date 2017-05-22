@@ -1,6 +1,4 @@
-#include "Logging.xcconfig"
-
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution
+#include "Project.xcconfig"
 
 COPY_PHASE_STRIP = YES
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
