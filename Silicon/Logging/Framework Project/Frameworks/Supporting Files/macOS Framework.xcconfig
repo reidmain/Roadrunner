@@ -1,0 +1,5 @@
+#include "Framework.xcconfig"
+#include "../../Supporting Files/macOS.xcconfig"
+
+FRAMEWORK_VERSION = A
+INFOPLIST_FILE = Frameworks/Supporting Files/macOS Info.plist

@@ -1,0 +1,4 @@
+#include "Framework.xcconfig"
+#include "../../Supporting Files/iOS.xcconfig"
+
+INFOPLIST_FILE = Frameworks/Supporting Files/iOS Info.plist

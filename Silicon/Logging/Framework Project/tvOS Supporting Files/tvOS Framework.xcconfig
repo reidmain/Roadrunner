@@ -1,4 +1,0 @@
-#include "../Supporting Files/Framework.xcconfig"
-#include "tvOS.xcconfig"
-
-INFOPLIST_FILE = tvOS Supporting Files/Info.plist

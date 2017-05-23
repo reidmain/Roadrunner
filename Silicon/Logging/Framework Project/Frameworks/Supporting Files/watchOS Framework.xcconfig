@@ -1,0 +1,4 @@
+#include "Framework.xcconfig"
+#include "../../Supporting Files/watchOS.xcconfig"
+
+INFOPLIST_FILE = Frameworks/Supporting Files/watchOS Info.plist

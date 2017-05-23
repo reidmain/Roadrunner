@@ -1,4 +1,0 @@
-#include "../Supporting Files/Framework.xcconfig"
-#include "watchOS.xcconfig"
-
-INFOPLIST_FILE = watchOS Supporting Files/Info.plist

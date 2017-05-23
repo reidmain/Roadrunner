@@ -1,4 +1,0 @@
-PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.logging.tests
-PRODUCT_NAME = $(TARGET_NAME)
-
-INFOPLIST_FILE = Logging Tests/Supporting Files/Info.plist
