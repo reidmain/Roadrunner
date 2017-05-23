@@ -1,0 +1,3 @@
+#include "watchOS Framework.xcconfig"
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer

@@ -14,6 +14,8 @@
 		27BB1A6E1ED28B5600A8987F /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
 		27BB1A6F1ED28B6100A8987F /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B957E01ED270240062EF04 /* Logging.framework */; };
 		27F6A21A1ED0088A0043A0AD /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27F756551ED3FCAA00192BFB /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27F756561ED3FCAF00192BFB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
 		27FB48E11ED003B900B04186 /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,12 @@
 		27B9580E1ED280ED0062EF04 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		27B9580F1ED2836B0062EF04 /* iOS Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS Framework.xcconfig"; sourceTree = "<group>"; };
 		27B958111ED284480062EF04 /* macOS Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS Framework.xcconfig"; sourceTree = "<group>"; };
+		27BB1A751ED2A45600A8987F /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BB1A7E1ED2A49800A8987F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27BB1A7F1ED2A4C500A8987F /* watchOS Framework Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS Framework Debug.xcconfig"; sourceTree = "<group>"; };
+		27BB1A801ED2A4C500A8987F /* watchOS Framework Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS Framework Release.xcconfig"; sourceTree = "<group>"; };
+		27BB1A811ED2A4C500A8987F /* watchOS Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS Framework.xcconfig"; sourceTree = "<group>"; };
+		27BB1A831ED2A4C500A8987F /* watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = watchOS.xcconfig; sourceTree = "<group>"; };
 		27F6A2121ED006F00043A0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F6A2171ED006FB0043A0AD /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		27FB48591ECD5D2300B04186 /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +83,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BB1A6F1ED28B6100A8987F /* Logging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB1A711ED2A45600A8987F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +136,18 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		27BB1A7D1ED2A49800A8987F /* watchOS Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BB1A7E1ED2A49800A8987F /* Info.plist */,
+				27BB1A831ED2A4C500A8987F /* watchOS.xcconfig */,
+				27BB1A811ED2A4C500A8987F /* watchOS Framework.xcconfig */,
+				27BB1A7F1ED2A4C500A8987F /* watchOS Framework Debug.xcconfig */,
+				27BB1A801ED2A4C500A8987F /* watchOS Framework Release.xcconfig */,
+			);
+			path = "watchOS Supporting Files";
+			sourceTree = "<group>";
+		};
 		27F6A2111ED006F00043A0AD /* iOS Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +188,7 @@
 				27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */,
 				27B957E01ED270240062EF04 /* Logging.framework */,
 				27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */,
+				27BB1A751ED2A45600A8987F /* Logging.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +199,7 @@
 				27F6A2161ED006FB0043A0AD /* Logging */,
 				27B957FE1ED272900062EF04 /* Supporting Files */,
 				27F6A2111ED006F00043A0AD /* iOS Supporting Files */,
+				27BB1A7D1ED2A49800A8987F /* watchOS Supporting Files */,
 				27B957F71ED271240062EF04 /* macOS Supporting Files */,
 			);
 			name = "Logging Framework";
@@ -209,6 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B957FB1ED2724E0062EF04 /* Logging.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB1A721ED2A45600A8987F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F756551ED3FCAA00192BFB /* Logging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +295,24 @@
 			productName = "Logging OS XTests";
 			productReference = 27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27BB1A741ED2A45600A8987F /* Logging watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BB1A7A1ED2A45600A8987F /* Build configuration list for PBXNativeTarget "Logging watchOS" */;
+			buildPhases = (
+				27BB1A701ED2A45600A8987F /* Sources */,
+				27BB1A711ED2A45600A8987F /* Frameworks */,
+				27BB1A721ED2A45600A8987F /* Headers */,
+				27BB1A731ED2A45600A8987F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Logging watchOS";
+			productName = WatchOS;
+			productReference = 27BB1A751ED2A45600A8987F /* Logging.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		27FB48581ECD5D2300B04186 /* Logging iOS */ = {
 			isa = PBXNativeTarget;
@@ -313,6 +368,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					27BB1A741ED2A45600A8987F = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					27FB48581ECD5D2300B04186 = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
@@ -337,6 +396,7 @@
 			projectRoot = "";
 			targets = (
 				27FB48581ECD5D2300B04186 /* Logging iOS */,
+				27BB1A741ED2A45600A8987F /* Logging watchOS */,
 				27B957DF1ED270240062EF04 /* Logging macOS */,
 				27FB48611ECD5D2300B04186 /* Logging iOS Tests */,
 				27B957E71ED270240062EF04 /* Logging macOS Tests */,
@@ -353,6 +413,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		27B957E61ED270240062EF04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB1A731ED2A45600A8987F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,6 +456,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BB1A6D1ED28A9800A8987F /* LoggingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB1A701ED2A45600A8987F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F756561ED3FCAF00192BFB /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +527,20 @@
 			};
 			name = Release;
 		};
+		27BB1A7B1ED2A45600A8987F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BB1A7F1ED2A4C500A8987F /* watchOS Framework Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		27BB1A7C1ED2A45600A8987F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BB1A801ED2A4C500A8987F /* watchOS Framework Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		27FB486B1ECD5D2300B04186 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27B957FF1ED272900062EF04 /* Project Debug.xcconfig */;
@@ -511,6 +600,15 @@
 			buildConfigurations = (
 				27B957F51ED270240062EF04 /* Debug */,
 				27B957F61ED270240062EF04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BB1A7A1ED2A45600A8987F /* Build configuration list for PBXNativeTarget "Logging watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BB1A7B1ED2A45600A8987F /* Debug */,
+				27BB1A7C1ED2A45600A8987F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
