@@ -1,0 +1,3 @@
+#include "tvOS Framework.xcconfig"
+
+CODE_SIGN_IDENTITY[sdk=appletvos*] = iPhone Developer

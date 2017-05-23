@@ -16,6 +16,10 @@
 		27F6A21A1ED0088A0043A0AD /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27F756551ED3FCAA00192BFB /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27F756561ED3FCAF00192BFB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
+		27F756651ED3FD4D00192BFB /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F7565C1ED3FD4D00192BFB /* Logging.framework */; };
+		27F7567A1ED3FDF500192BFB /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F6A2171ED006FB0043A0AD /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27F7567B1ED3FDFA00192BFB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
+		27F7567C1ED3FFCB00192BFB /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
 		27FB48E11ED003B900B04186 /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 27B957DF1ED270240062EF04;
 			remoteInfo = "Logging OS X";
+		};
+		27F756661ED3FD4D00192BFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27FB48501ECD5D2300B04186 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F7565B1ED3FD4D00192BFB;
+			remoteInfo = tvOS;
 		};
 		27FB48641ECD5D2300B04186 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -64,6 +75,14 @@
 		27BB1A831ED2A4C500A8987F /* watchOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = watchOS.xcconfig; sourceTree = "<group>"; };
 		27F6A2121ED006F00043A0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F6A2171ED006FB0043A0AD /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		27F7565C1ED3FD4D00192BFB /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F756641ED3FD4D00192BFB /* Logging tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logging tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F756741ED3FDF300192BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F756751ED3FDF300192BFB /* tvOS Framework Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS Framework Debug.xcconfig"; sourceTree = "<group>"; };
+		27F756761ED3FDF300192BFB /* tvOS Framework Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS Framework Release.xcconfig"; sourceTree = "<group>"; };
+		27F756771ED3FDF300192BFB /* tvOS Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS Framework.xcconfig"; sourceTree = "<group>"; };
+		27F756781ED3FDF300192BFB /* tvOS Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS Tests.xcconfig"; sourceTree = "<group>"; };
+		27F756791ED3FDF300192BFB /* tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tvOS.xcconfig; sourceTree = "<group>"; };
 		27FB48591ECD5D2300B04186 /* Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logging iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FB48DE1ED003B500B04186 /* LoggingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingTests.swift; sourceTree = "<group>"; };
@@ -90,6 +109,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F756581ED3FD4D00192BFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F756611ED3FD4D00192BFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F756651ED3FD4D00192BFB /* Logging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +205,19 @@
 			path = ../Logging;
 			sourceTree = "<group>";
 		};
+		27F756731ED3FDF300192BFB /* tvOS Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27F756741ED3FDF300192BFB /* Info.plist */,
+				27F756791ED3FDF300192BFB /* tvOS.xcconfig */,
+				27F756771ED3FDF300192BFB /* tvOS Framework.xcconfig */,
+				27F756751ED3FDF300192BFB /* tvOS Framework Debug.xcconfig */,
+				27F756761ED3FDF300192BFB /* tvOS Framework Release.xcconfig */,
+				27F756781ED3FDF300192BFB /* tvOS Tests.xcconfig */,
+			);
+			path = "tvOS Supporting Files";
+			sourceTree = "<group>";
+		};
 		27FB484F1ECD5D2300B04186 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +236,8 @@
 				27B957E01ED270240062EF04 /* Logging.framework */,
 				27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */,
 				27BB1A751ED2A45600A8987F /* Logging.framework */,
+				27F7565C1ED3FD4D00192BFB /* Logging.framework */,
+				27F756641ED3FD4D00192BFB /* Logging tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +249,7 @@
 				27B957FE1ED272900062EF04 /* Supporting Files */,
 				27F6A2111ED006F00043A0AD /* iOS Supporting Files */,
 				27BB1A7D1ED2A49800A8987F /* watchOS Supporting Files */,
+				27F756731ED3FDF300192BFB /* tvOS Supporting Files */,
 				27B957F71ED271240062EF04 /* macOS Supporting Files */,
 			);
 			name = "Logging Framework";
@@ -246,6 +296,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F756551ED3FCAA00192BFB /* Logging.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F756591ED3FD4D00192BFB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F7567A1ED3FDF500192BFB /* Logging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +372,42 @@
 			productReference = 27BB1A751ED2A45600A8987F /* Logging.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		27F7565B1ED3FD4D00192BFB /* Logging tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F7566D1ED3FD4D00192BFB /* Build configuration list for PBXNativeTarget "Logging tvOS" */;
+			buildPhases = (
+				27F756571ED3FD4D00192BFB /* Sources */,
+				27F756581ED3FD4D00192BFB /* Frameworks */,
+				27F756591ED3FD4D00192BFB /* Headers */,
+				27F7565A1ED3FD4D00192BFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Logging tvOS";
+			productName = tvOS;
+			productReference = 27F7565C1ED3FD4D00192BFB /* Logging.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		27F756631ED3FD4D00192BFB /* Logging tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F756701ED3FD4D00192BFB /* Build configuration list for PBXNativeTarget "Logging tvOS Tests" */;
+			buildPhases = (
+				27F756601ED3FD4D00192BFB /* Sources */,
+				27F756611ED3FD4D00192BFB /* Frameworks */,
+				27F756621ED3FD4D00192BFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27F756671ED3FD4D00192BFB /* PBXTargetDependency */,
+			);
+			name = "Logging tvOS Tests";
+			productName = tvOSTests;
+			productReference = 27F756641ED3FD4D00192BFB /* Logging tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27FB48581ECD5D2300B04186 /* Logging iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27FB486D1ECD5D2300B04186 /* Build configuration list for PBXNativeTarget "Logging iOS" */;
@@ -372,6 +466,14 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					27F7565B1ED3FD4D00192BFB = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					27F756631ED3FD4D00192BFB = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					27FB48581ECD5D2300B04186 = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
@@ -397,8 +499,10 @@
 			targets = (
 				27FB48581ECD5D2300B04186 /* Logging iOS */,
 				27BB1A741ED2A45600A8987F /* Logging watchOS */,
+				27F7565B1ED3FD4D00192BFB /* Logging tvOS */,
 				27B957DF1ED270240062EF04 /* Logging macOS */,
 				27FB48611ECD5D2300B04186 /* Logging iOS Tests */,
+				27F756631ED3FD4D00192BFB /* Logging tvOS Tests */,
 				27B957E71ED270240062EF04 /* Logging macOS Tests */,
 			);
 		};
@@ -420,6 +524,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		27BB1A731ED2A45600A8987F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7565A1ED3FD4D00192BFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F756621ED3FD4D00192BFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,6 +585,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27F756571ED3FD4D00192BFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F7567B1ED3FDFA00192BFB /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F756601ED3FD4D00192BFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F7567C1ED3FFCB00192BFB /* LoggingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27FB48541ECD5D2300B04186 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +624,11 @@
 			isa = PBXTargetDependency;
 			target = 27B957DF1ED270240062EF04 /* Logging macOS */;
 			targetProxy = 27B957EA1ED270240062EF04 /* PBXContainerItemProxy */;
+		};
+		27F756671ED3FD4D00192BFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F7565B1ED3FD4D00192BFB /* Logging tvOS */;
+			targetProxy = 27F756661ED3FD4D00192BFB /* PBXContainerItemProxy */;
 		};
 		27FB48651ECD5D2300B04186 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -537,6 +676,34 @@
 		27BB1A7C1ED2A45600A8987F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27BB1A801ED2A4C500A8987F /* watchOS Framework Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		27F7566E1ED3FD4D00192BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F756751ED3FDF300192BFB /* tvOS Framework Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		27F7566F1ED3FD4D00192BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F756761ED3FDF300192BFB /* tvOS Framework Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		27F756711ED3FD4D00192BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F756781ED3FDF300192BFB /* tvOS Tests.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		27F756721ED3FD4D00192BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27F756781ED3FDF300192BFB /* tvOS Tests.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -612,6 +779,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		27F7566D1ED3FD4D00192BFB /* Build configuration list for PBXNativeTarget "Logging tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F7566E1ED3FD4D00192BFB /* Debug */,
+				27F7566F1ED3FD4D00192BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27F756701ED3FD4D00192BFB /* Build configuration list for PBXNativeTarget "Logging tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F756711ED3FD4D00192BFB /* Debug */,
+				27F756721ED3FD4D00192BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		27FB48531ECD5D2300B04186 /* Build configuration list for PBXProject "Logging" */ = {
 			isa = XCConfigurationList;
