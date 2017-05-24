@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277C03D01ED53898008F8497 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
 		27B9580B1ED27B8F0062EF04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
 		27B9580C1ED27BA90062EF04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
 		27BB1A6D1ED28A9800A8987F /* LoggingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FB48DE1ED003B500B04186 /* LoggingTests.swift */; };
@@ -14,7 +15,6 @@
 		27BF9B521ED406B300C0BC30 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BF9B501ED406AF00C0BC30 /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27BF9B531ED406B300C0BC30 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BF9B501ED406AF00C0BC30 /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27BF9B541ED406B400C0BC30 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 27BF9B501ED406AF00C0BC30 /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27D278881ED40BF600AFB718 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FB48591ECD5D2300B04186 /* Logging.framework */; };
 		27D278891ED40C0900AFB718 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F7565C1ED3FD4D00192BFB /* Logging.framework */; };
 		27D2788A1ED40C0D00AFB718 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B957E01ED270240062EF04 /* Logging.framework */; };
 		27F756561ED3FCAF00192BFB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9580A1ED27B8F0062EF04 /* Logger.swift */; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D278881ED40BF600AFB718 /* Logging.framework in Frameworks */,
+				277C03D01ED53898008F8497 /* Logging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +210,11 @@
 			children = (
 				27FB48591ECD5D2300B04186 /* Logging.framework */,
 				27FB48621ECD5D2300B04186 /* Logging iOS Tests.xctest */,
-				27B957E01ED270240062EF04 /* Logging.framework */,
-				27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */,
 				27BB1A751ED2A45600A8987F /* Logging.framework */,
 				27F7565C1ED3FD4D00192BFB /* Logging.framework */,
 				27F756641ED3FD4D00192BFB /* Logging tvOS Tests.xctest */,
+				27B957E01ED270240062EF04 /* Logging.framework */,
+				27B957E81ED270240062EF04 /* Logging macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
