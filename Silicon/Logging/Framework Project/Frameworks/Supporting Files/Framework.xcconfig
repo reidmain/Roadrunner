@@ -10,6 +10,6 @@ VERSION_INFO_PREFIX =
 VERSIONING_SYSTEM = apple-generic
 
 DEFINES_MODULE = YES
+ENABLE_BITCODE = YES
 
 OTHER_SWIFT_FLAGS = -Xfrontend -warn-long-function-bodies=100
-
