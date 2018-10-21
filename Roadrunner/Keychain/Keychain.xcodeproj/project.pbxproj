@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2705ACC5217AE4E200DDB605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2705ACC4217AE4E200DDB605 /* AppDelegate.swift */; };
+		2705ACD9217C479F00DDB605 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2705ACD8217C479F00DDB605 /* Launch Screen.storyboard */; };
 		277CA0BE1D14AD26004FE44B /* Keychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 277CA0BD1D14AD26004FE44B /* Keychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		277CA0C51D14AD26004FE44B /* Keychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277CA0BA1D14AD26004FE44B /* Keychain.framework */; };
 		277CA0CA1D14AD26004FE44B /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CA0C91D14AD26004FE44B /* KeychainTests.swift */; };
@@ -36,6 +37,7 @@
 		2705ACC2217AE4E200DDB605 /* TestHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2705ACC4217AE4E200DDB605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2705ACD0217AE4E300DDB605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2705ACD8217C479F00DDB605 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		277CA0BA1D14AD26004FE44B /* Keychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		277CA0BD1D14AD26004FE44B /* Keychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
 		277CA0BF1D14AD26004FE44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				2705ACC4217AE4E200DDB605 /* AppDelegate.swift */,
 				2705ACD0217AE4E300DDB605 /* Info.plist */,
+				2705ACD8217C479F00DDB605 /* Launch Screen.storyboard */,
 			);
 			path = TestHost;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 					277CA0C31D14AD26004FE44B = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1000;
+						ProvisioningStyle = Manual;
 						TestTargetID = 2705ACC1217AE4E200DDB605;
 					};
 				};
@@ -241,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2705ACD9217C479F00DDB605 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,10 +512,13 @@
 		277CA0D21D14AD26004FE44B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KeychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FD.KeychainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHost.app/TestHost";
 			};
@@ -519,10 +527,13 @@
 		277CA0D31D14AD26004FE44B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KeychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FD.KeychainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHost.app/TestHost";
 			};
