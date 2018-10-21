@@ -229,14 +229,7 @@ public struct Keychain
 
 			let queryDictionary = addQuery.queryDictionary as CFDictionary
 			let addResultCode = SecItemAdd(queryDictionary, nil)
-			if addResultCode == errSecSuccess
-			{
-				return nil
-			}
-			else
-			{
-				return addResultCode
-			}
+			return addResultCode
 		}
 		// If the item already exists in the keychain we must update it instead of adding.
 		else if loadResultCode == errSecSuccess
@@ -251,14 +244,7 @@ public struct Keychain
 			let queryDictionary = updateQuery.queryDictionary as CFDictionary
 			let attributesToUpdate = updateQuery.attributesToUpdate as CFDictionary
 			let updateResultCode = SecItemUpdate(queryDictionary, attributesToUpdate)
-			if updateResultCode == errSecSuccess
-			{
-				return nil
-			}
-			else
-			{
-				return updateResultCode
-			}
+			return updateResultCode
 		}
 		// Otherwise a genuine error occurred and we should bubble it up.
 		else

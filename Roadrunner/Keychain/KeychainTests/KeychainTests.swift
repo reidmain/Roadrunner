@@ -35,8 +35,9 @@ class KeychainTests : XCTestCase
 			key: key,
 			accessGroup: nil,
 			accessibility: .whenUnlocked)
-		XCTAssertNil(
+		XCTAssertEqual(
 			saveResult,
+			errSecSuccess,
 			"The item should have been successfully saved to the keychain.")
 
 		// TODO: Load the item from the keychain and make sure it is the same thing.
@@ -65,8 +66,9 @@ class KeychainTests : XCTestCase
 			key: key,
 			accessGroup: nil,
 			accessibility: .whenUnlocked)
-		XCTAssertNil(
+		XCTAssertEqual(
 			oldSaveResult,
+			errSecSuccess,
 			"The item should have been successfully saved to the keychain.")
 
 		let newSaveResult = keychain.save(
@@ -75,8 +77,9 @@ class KeychainTests : XCTestCase
 			key: key,
 			accessGroup: nil,
 			accessibility: .whenUnlocked)
-		XCTAssertNil(
+		XCTAssertEqual(
 			newSaveResult,
+			errSecSuccess,
 			"The item should have been successfully saved to the keychain.")
 
 		// TODO: Load the item from the keychain and make sure it is the correct one.
