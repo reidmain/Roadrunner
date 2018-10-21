@@ -19,20 +19,19 @@ public enum KeychainAccessibility
 	}
 }
 
-internal struct KeychainLoadQuery
+internal class BaseKeychainQuery
 {
 	// MARK: - Public Properties
 
+	private let itemClass = kSecClassGenericPassword
 	public let service: String
-	public let key: String
 	public let accessGroup: String?
 
 	public var queryDictionary: [AnyHashable: Any]
 	{
 		var queryDictionary: [AnyHashable: Any] =
 		[
-			kSecClass: kSecClassGenericPassword,
-			kSecAttrAccount: key,
+			kSecClass: itemClass,
 			kSecAttrService: service
 		]
 
@@ -47,70 +46,97 @@ internal struct KeychainLoadQuery
 
 		return queryDictionary
 	}
+
+	// MARK: - Initializers
+
+	public init(
+		service: String,
+		accessGroup: String?)
+	{
+		self.service = service
+		self.accessGroup = accessGroup
+	}
 }
 
-internal struct KeychainAddQuery
+internal final class KeychainLoadQuery : BaseKeychainQuery
+{
+	// MARK: - Public Properties
+
+	public let key: String
+
+	override public var queryDictionary: [AnyHashable: Any]
+	{
+		var queryDictionary = super.queryDictionary
+		queryDictionary[kSecAttrAccount] = key
+
+		return queryDictionary
+	}
+
+	// MARK: - Initializers
+
+	public init(
+		service: String,
+		key: String,
+		accessGroup: String?)
+	{
+		self.key = key
+
+		super.init(
+			service: service,
+			accessGroup: accessGroup)
+	}
+}
+
+internal final class KeychainAddQuery : BaseKeychainQuery
 {
 	// MARK: - Public Properties
 
 	public let item: Data
-	public let service: String
 	public let key: String
-	public let accessGroup: String?
 	public let accessibility: KeychainAccessibility
 
-	public var queryDictionary: [AnyHashable: Any]
+	override public var queryDictionary: [AnyHashable: Any]
 	{
-		var queryDictionary: [AnyHashable: Any] =
-		[
-			kSecClass: kSecClassGenericPassword,
-			kSecAttrAccount: key,
-			kSecAttrService: service
-		]
-
-		#if TARGET_IPHONE_SIMULATOR
-		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
-		#else
-		if let accessGroup = accessGroup
-		{
-			queryDictionary[kSecAttrAccessGroup] = accessGroup
-		}
-		#endif
+		var queryDictionary = super.queryDictionary
 
 		queryDictionary[kSecValueData] = item
+		queryDictionary[kSecAttrAccount] = key
 		queryDictionary[kSecAttrAccessible] = accessibility.rawValue
 
 		return queryDictionary
 	}
+
+	// MARK: - Initializers
+
+	public init(
+		item: Data,
+		service: String,
+		key: String,
+		accessGroup: String?,
+		accessibility: KeychainAccessibility)
+	{
+		self.item = item
+		self.key = key
+		self.accessibility = accessibility
+
+		super.init(
+			service: service,
+			accessGroup: accessGroup)
+	}
 }
 
-internal struct KeychainUpdateQuery
+internal final class KeychainUpdateQuery : BaseKeychainQuery
 {
 	// MARK: - Public Properties
 
 	public let item: Data
-	public let service: String
 	public let key: String
-	public let accessGroup: String?
 	public let accessibility: KeychainAccessibility
 
-	public var queryDictionary: [AnyHashable: Any]
+	override public var queryDictionary: [AnyHashable: Any]
 	{
-		var queryDictionary: [AnyHashable: Any] =
-		[
-			kSecClass: kSecClassGenericPassword,
-			kSecAttrAccount: key,
-			kSecAttrService: service
-		]
-
-		#if TARGET_IPHONE_SIMULATOR
-		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
-		#else
-		if let accessGroup = accessGroup
-		{
-			queryDictionary[kSecAttrAccessGroup] = accessGroup
-		}
-		#endif
+		var queryDictionary = super.queryDictionary
+		queryDictionary[kSecAttrAccount] = key
 
 		return queryDictionary
 	}
@@ -125,35 +151,52 @@ internal struct KeychainUpdateQuery
 
 		return attributesToUpdate
 	}
+
+	// MARK: - Initializers
+
+	public init(
+		item: Data,
+		service: String,
+		key: String,
+		accessGroup: String?,
+		accessibility: KeychainAccessibility)
+	{
+		self.item = item
+		self.key = key
+		self.accessibility = accessibility
+
+		super.init(
+			service: service,
+			accessGroup: accessGroup)
+	}
 }
 
-internal struct KeychainDeleteQuery
+internal final class KeychainDeleteQuery : BaseKeychainQuery
 {
 	// MARK: - Public Properties
 
-	public let service: String
 	public let key: String
-	public let accessGroup: String?
 
-	public var queryDictionary: [AnyHashable: Any]
+	override public var queryDictionary: [AnyHashable: Any]
 	{
-		var queryDictionary: [AnyHashable: Any] =
-		[
-			kSecClass: kSecClassGenericPassword,
-			kSecAttrAccount: key,
-			kSecAttrService: service
-		]
-
-		#if TARGET_IPHONE_SIMULATOR
-		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
-		#else
-		if let accessGroup = accessGroup
-		{
-			queryDictionary[kSecAttrAccessGroup] = accessGroup
-		}
-		#endif
+		var queryDictionary = super.queryDictionary
+		queryDictionary[kSecAttrAccount] = key
 
 		return queryDictionary
+	}
+
+	// MARK: - Initializers
+
+	public init(
+		service: String,
+		key: String,
+		accessGroup: String?)
+	{
+		self.key = key
+
+		super.init(
+			service: service,
+			accessGroup: accessGroup)
 	}
 }
 
