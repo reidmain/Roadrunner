@@ -202,6 +202,22 @@ internal final class KeychainDeleteQuery : BaseKeychainQuery
 
 public struct Keychain
 {
+	// MARK: - Properties
+
+	private let keychainService: KeychainServicing
+
+	// MARK: - Initializers
+
+	public init()
+	{
+		self.init(keychainService: KeychainService())
+	}
+
+	internal init(keychainService: KeychainServicing)
+	{
+		self.keychainService = keychainService
+	}
+
 	// MARK: - Public Methods
 
 	public func save(
@@ -228,7 +244,7 @@ public struct Keychain
 				accessibility: accessibility)
 
 			let queryDictionary = addQuery.queryDictionary as CFDictionary
-			let addResultCode = SecItemAdd(queryDictionary, nil)
+			let addResultCode = keychainService.SecItemAdd(queryDictionary, nil)
 			return addResultCode
 		}
 		// If the item already exists in the keychain we must update it instead of adding.
@@ -243,14 +259,12 @@ public struct Keychain
 
 			let queryDictionary = updateQuery.queryDictionary as CFDictionary
 			let attributesToUpdate = updateQuery.attributesToUpdate as CFDictionary
-			let updateResultCode = SecItemUpdate(queryDictionary, attributesToUpdate)
+			let updateResultCode = keychainService.SecItemUpdate(queryDictionary, attributesToUpdate)
 			return updateResultCode
 		}
+
 		// Otherwise a genuine error occurred and we should bubble it up.
-		else
-		{
-			return loadResultCode
-		}
+		return loadResultCode
 	}
 
 	public func delete(
@@ -265,7 +279,7 @@ public struct Keychain
 			accessGroup: accessGroup)
 
 		let queryDictionary = deleteQuery.queryDictionary as CFDictionary
-		let resultCode = SecItemDelete(queryDictionary)
+		let resultCode = keychainService.SecItemDelete(queryDictionary)
 		return resultCode
 	}
 
@@ -284,7 +298,7 @@ public struct Keychain
 
 		let queryDictionary = loadQuery.queryDictionary as CFDictionary
 		var result: AnyObject?
-		let resultCode = SecItemCopyMatching(queryDictionary, &result)
+		let resultCode = keychainService.SecItemCopyMatching(queryDictionary, &result)
 
 		return resultCode
 	}
