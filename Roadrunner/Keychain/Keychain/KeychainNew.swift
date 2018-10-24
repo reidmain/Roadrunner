@@ -21,11 +21,17 @@ public enum KeychainAccessibility
 
 internal class BaseKeychainQuery
 {
-	// MARK: - Public Properties
+	// MARK: - Properties
 
-	private let itemClass = kSecClassGenericPassword
+	// MARK: Public
+
 	public let service: String
 	public let accessGroup: String?
+
+	// MARK: Private
+
+	private let itemClass = kSecClassGenericPassword
+	private let accessGroupAvailable: Bool
 
 	public var queryDictionary: [AnyHashable: Any]
 	{
@@ -35,14 +41,11 @@ internal class BaseKeychainQuery
 			kSecAttrService: service
 		]
 
-		#if TARGET_IPHONE_SIMULATOR
-		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
-		#else
-		if let accessGroup = accessGroup
+		if accessGroupAvailable == true,
+			let accessGroup = accessGroup
 		{
 			queryDictionary[kSecAttrAccessGroup] = accessGroup
 		}
-		#endif
 
 		return queryDictionary
 	}
@@ -55,7 +58,26 @@ internal class BaseKeychainQuery
 	{
 		self.service = service
 		self.accessGroup = accessGroup
+		#if TARGET_OS_SIMULATOR
+		// Note: If this code is running in the Simulator the access group cannot be set. Apps running in the Simulator are not signed so there is no access group for them to check. Apps running in the Simulator treat all keychain items as being part of the same access group. If you need to test apps that use access groups you will need to install the apps on a device.
+		self.accessGroupAvailable = true
+		#else
+		self.accessGroupAvailable = false
+		#endif
 	}
+
+	// This initializer is strictly for testing purposes
+	#if DEBUG
+	internal init(
+		service: String,
+		accessGroup: String?,
+		accessGroupAvailable: Bool)
+	{
+		self.service = service
+		self.accessGroup = accessGroup
+		self.accessGroupAvailable = accessGroupAvailable
+	}
+	#endif
 }
 
 internal final class KeychainLoadQuery : BaseKeychainQuery

@@ -6,6 +6,70 @@ class KeychainUnitTests : XCTestCase
 {
 	// MARK: - Tests
 
+	func test_baseKeychainQuery_noAccessGroup()
+	{
+		let service = "service"
+
+		let baseKeychainQuery = BaseKeychainQuery(
+			service: service,
+			accessGroup: nil,
+			accessGroupAvailable: true)
+
+		let queryDictionary = baseKeychainQuery.queryDictionary
+
+		XCTAssertEqual(
+			queryDictionary[kSecClass] as! CFString,
+			kSecClassGenericPassword)
+		XCTAssertEqual(
+			queryDictionary[kSecAttrService] as? String,
+			service)
+		XCTAssertNil(queryDictionary[kSecAttrAccessGroup] as? String)
+	}
+
+	func test_baseKeychainQuery_accessGroupEnabled()
+	{
+		let service = "service"
+		let accessGroup = "access.group"
+
+		let baseKeychainQuery = BaseKeychainQuery(
+			service: service,
+			accessGroup: accessGroup,
+			accessGroupAvailable: true)
+
+		let queryDictionary = baseKeychainQuery.queryDictionary
+
+		XCTAssertEqual(
+			queryDictionary[kSecClass] as! CFString,
+			kSecClassGenericPassword)
+		XCTAssertEqual(
+			queryDictionary[kSecAttrService] as? String,
+			service)
+		XCTAssertEqual(
+			queryDictionary[kSecAttrAccessGroup] as? String,
+			accessGroup)
+	}
+
+	func test_baseKeychainQuery_accessGroupDisabled()
+	{
+		let service = "service"
+		let accessGroup = "access.group"
+
+		let baseKeychainQuery = BaseKeychainQuery(
+			service: service,
+			accessGroup: accessGroup,
+			accessGroupAvailable: false)
+
+		let queryDictionary = baseKeychainQuery.queryDictionary
+
+		XCTAssertEqual(
+			queryDictionary[kSecClass] as! CFString,
+			kSecClassGenericPassword)
+		XCTAssertEqual(
+			queryDictionary[kSecAttrService] as? String,
+			service)
+		XCTAssertNil(queryDictionary[kSecAttrAccessGroup] as? String)
+	}
+
 	func test_errorOccursWhileCheckingForExistenceDuringAddingAnItem()
 	{
 		let mockKeychainService = MockKeychainService(
